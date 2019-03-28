@@ -3,6 +3,7 @@ package com.iu.member;
 // 멤버에 데이터를 저장하기 위한 클래스
 
 public class Member {
+	
 	private String id;
 	private String pw;
 	private int age;
