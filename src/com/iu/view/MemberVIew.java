@@ -21,7 +21,7 @@ public class MemberVIew {
 	}
 
 	// member 들의 정보를 출력하는 메서드
-	public void view2(Member[] members) { // 멤버 배열을 출력
+	public void view(Member[] members) { // 멤버 배열을 출력
 		for (int i = 0; i < members.length; i++) {
 			Member member = members[i];
 //			System.out.println("ID : " + member.getId());

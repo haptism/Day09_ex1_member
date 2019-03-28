@@ -2,16 +2,25 @@ package com.iu.member;
 
 import java.util.Scanner;
 
+import com.iu.view.MemberVIew;
+
 public class MemberController {
-	
+
 	private Scanner sc;
-	private Member[] members;
+	private Member [] members;
+	private MemberInput mi;
+	private MemberAdd ma;
+	private MemberVIew mv;
+	
 
 	public MemberController() {
 		// 접근지정자 클래스명과 동일하게
 		sc = new Scanner(System.in);
 		members = new Member[0];
-		System.out.println(members.length);
+		mi = new MemberInput();
+		ma = new MemberAdd();
+		mv = new MemberVIew();
+//		System.out.println(members.length);
 
 	}
 	// start
@@ -32,13 +41,21 @@ public class MemberController {
 			int select = sc.nextInt();
 			switch (select) {
 			case 1:
-				System.out.println("가입");
+				Member m = mi.memberJoin();
+				members = ma.add(members, m);
+//				ma.add(members, m);
+//				System.out.println("가입");
 				break;
 			case 2:
 				System.out.println("로그인");
+				Member member = mi.memberLogin(members);
+				if(member != null) {
+					System.out.println();
+				}
 				break;
 			case 3:
-				System.out.println("정보 출력");
+				mv.view(members);
+//				System.out.println("정보 출력");
 				break;
 			default:
 				check = !check; // check = false
