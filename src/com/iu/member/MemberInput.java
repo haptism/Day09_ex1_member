@@ -3,16 +3,33 @@ package com.iu.member;
 import java.util.Scanner;
 
 public class MemberInput {
+	private Scanner sc;
+
+	public MemberInput() {
+		sc = new Scanner(System.in);
+
+	}
 
 	// memberLogin
 	// 매개변수로 Member []을 받아서
 	// member를 리턴
 
-	public Member memberLogin(Member[] member) {
+	public Member memberLogin(Member[] members) {
+		Member member = null;
 
+		System.out.println("ID를 입력하세요");
+		String id = sc.next();
 
+		System.out.println("PW를 입력하세요");
+		String pw = sc.next();
+
+		for (int i = 0; i < members.length; i++) {
+			if (id.contentEquals(members[i].getId()) && pw.equals(members[i].getPw()))
+				;
+			member = members[i];
+			break;
+		}
 		return member;
-
 	}
 
 	// memberJoin
@@ -21,7 +38,6 @@ public class MemberInput {
 
 	public Member memberJoin() { // 멤버 메소드를 출력
 
-		Scanner sc = new Scanner(System.in);
 		Member member = new Member();
 
 		System.out.println("ID 입력하세요");

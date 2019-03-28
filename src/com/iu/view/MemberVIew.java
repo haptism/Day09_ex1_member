@@ -5,6 +5,11 @@ import com.iu.member.Member;
 // view 라는 메서드는 출력을 담당하는 메서드
 
 public class MemberVIew {
+
+	public void view(String message) {
+		System.out.println(message);
+	}
+
 	// member 한명의 정보를 출력하는 메서드
 
 	public void view(Member member) { // 멤버 메소드를 출력
