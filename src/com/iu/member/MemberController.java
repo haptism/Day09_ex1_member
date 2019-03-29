@@ -23,6 +23,7 @@ public class MemberController {
 //		System.out.println(members.length);
 
 	}
+	
 	// start
 
 	// 1. 회원가입
@@ -40,6 +41,7 @@ public class MemberController {
 			System.out.println("4. 프로그램 종료");
 			int select = sc.nextInt();
 			switch (select) {
+			
 			case 1:
 				Member m = mi.memberJoin();
 				members = ma.add(members, m);
